@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
+import UserFeature from './UserFeature';
+import AdminFeature from './AdminFeatures';
+import SignIn from './SignIn';
 
 // Firebase configuration
 const firebaseConfig = {
@@ -28,7 +31,7 @@ const App = () => {
         setUser(user);
       } else {
         setUser(null);
-        setUserRole('user'); // Reset user role when user logs out
+        setUserRole('user'); // Reset user role when the user logs out
       }
     });
 
@@ -36,7 +39,7 @@ const App = () => {
     return () => unsubscribe();
   }, []);
 
-  // Fetch user role from Firestore when user is logged in
+  // Fetch user role from Firestore when the user is logged in
   useEffect(() => {
     const fetchUserRole = async () => {
       if (user) {
@@ -61,7 +64,7 @@ const App = () => {
           <h1>Welcome, {user.email}!</h1>
           <p>Your role: {userRole}</p>
           <button onClick={handleSignOut}>Sign Out</button>
-          {userRole === 'admin' ? <AdminFeatures /> : <UserFeatures />}
+          {userRole === 'admin' ? <AdminFeature /> : <UserFeature />}
         </div>
       ) : (
         <div>
@@ -73,26 +76,12 @@ const App = () => {
   );
 };
 
-const SignIn = () => {
-  const handleSignIn = async () => {
-    try {
-      // Use Google authentication for signing in
-      const provider = new firebase.auth.GoogleAuthProvider();
-      await firebase.auth().signInWithPopup(provider);
-    } catch (error) {
-      console.error('Error signing in:', error);
-    }
-  };
-
-  return <button onClick={handleSignIn}>Sign In with Google</button>;
-};
-
 const UserFeatures = () => {
-  return <h2>User Features</h2>;
+  return <UserFeature />;
 };
 
 const AdminFeatures = () => {
-  return <h2>Admin Features</h2>;
+  return <AdminFeature />;
 };
 
 export default App;
