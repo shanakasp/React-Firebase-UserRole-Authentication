@@ -5,6 +5,7 @@ import 'firebase/compat/firestore';
 import UserFeature from './UserFeature';
 import AdminFeature from './AdminFeatures';
 import SignIn from './SignIn';
+import Dashboard from "./Compenents/Dashboard";
 
 // Firebase configuration
 const firebaseConfig = {
@@ -59,6 +60,7 @@ const App = () => {
 
   return (
     <div>
+    <Dashboard></Dashboard>
       {user ? (
         <div>
           <h1>Welcome, {user.email}!</h1>
