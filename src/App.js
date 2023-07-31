@@ -11,14 +11,14 @@ import AdminUploadImages from './Compenents/AdminUploadImages';
 
 // Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBzr_TXYZId-ia2sCqFFuCayfb6suneMKk",
-  authDomain: "react-userrole.firebaseapp.com",
-  databaseURL:"https://console.firebase.google.com/project/react-userrole/storage/react-userrole.appspot.com/files",
-  projectId: "react-userrole",
-  storageBucket: "react-userrole.appspot.com",
-  messagingSenderId: "869322231794",
-  appId: "1:869322231794:web:2375ccb8155703d35d656b",
-  measurementId: "G-GERGHH0T4J"
+  apiKey: "*",
+  authDomain: "*",
+  databaseURL:"*",
+  projectId: "*",
+  storageBucket: "*",
+  messagingSenderId: "*",
+  appId: "*",
+  measurementId: "*"
   // Add other config values here
 };
 
