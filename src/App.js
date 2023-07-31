@@ -7,11 +7,13 @@ import AdminFeature from './AdminFeatures';
 import SignIn from './SignIn';
 import Dashboard from "./Compenents/Dashboard";
 import Cover from './Compenents/Cover';
+import AdminUploadImages from './Compenents/AdminUploadImages';
 
 // Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyBzr_TXYZId-ia2sCqFFuCayfb6suneMKk",
   authDomain: "react-userrole.firebaseapp.com",
+  databaseURL:"https://console.firebase.google.com/project/react-userrole/storage/react-userrole.appspot.com/files",
   projectId: "react-userrole",
   storageBucket: "react-userrole.appspot.com",
   messagingSenderId: "869322231794",
@@ -63,6 +65,7 @@ const App = () => {
     <div>
     <Dashboard></Dashboard>
     <Cover></Cover>
+    <AdminUploadImages></AdminUploadImages>
       {user ? (
         <div>
           <h1>Welcome, {user.email}!</h1>
